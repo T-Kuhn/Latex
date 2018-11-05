@@ -1,8 +1,8 @@
-PWD i:/Latex/Assignment
+PWD c:/git/Latex/ChargesEnergiesAndPotentials
 INPUT i:/texlive/2018/texmf.cnf
 INPUT i:/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT i:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT i:/Latex/Assignment/assignment.tex
+INPUT c:/git/Latex/ChargesEnergiesAndPotentials/assignment.tex
 OUTPUT assignment.log
 INPUT i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 INPUT i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls

@@ -91,22 +91,22 @@ e^- = -1.6 \cdot 10^{-19} [C]
 
 Using \ref{eq:1} for the charge of a single electron we let $Q_C$ be the total charge of the 2.5 trillion electrons and calculate that
 
-\begin{align} \label{eq:1}
+\begin{align} \label{eq:2}
 Q_C &= 2.5 \cdot 10^{18} \cdot e^- \\ &= -0.4 [C]
 \end{align}
 
 In order to calculate how much work it takes to move $Q_C$ from infinitely far away to point A,
 we need to know how strong the electric field is at any point on the journey. 
 Let $r$ be the distance from point A to any point in 3D space, $\epsilon_0$\footnote{$\epsilon_0 = 8.854 \cdot 10 ^ {-12} [m/F] $} the permitivity in empty space (vacuum),
-then we can define the electric field $E$ at any distance r relative to point A as 
+then the electric field $E$ at any distance r relative to point A is 
 
-\begin{align} \label{eq:2}
+\begin{align} \label{eq:3}
 E &= \frac{Q_A}{4 \pi \epsilon_0 r^2}
 \end{align}
 
-And the force $F$ at any point as
+And the force $F$ at any point is
 
-\begin{align} \label{eq:3}
+\begin{align} \label{eq:4}
 F &= E \cdot Q_C \\
   &= \frac{Q_A}{4 \pi \epsilon_0 r^2} \cdot Q_C
 \end{align}
@@ -115,32 +115,32 @@ To get the work it takes to move $Q_C$ towards point A from distance $\infty$ to
 we then take the integral of the force from $\infty$ to 0. Note how we introduce the concept of the mathematical limit
 to be able to deal with infinities.
 
-\begin{align} \label{eq:4}
+\begin{align} \label{eq:5}
 W &= - lim_{x\to\infty} \int_x^0{\frac{Q_A Q_C}{4 \pi \epsilon_0 r^2}} \cdot dr \\
   &= - \frac{Q_A Q_C}{4 \pi \epsilon_0 } lim_{x\to\infty} \int_x^0{\frac{1}{r^2}} \cdot dr \\
   &= - \frac{Q_A Q_C}{4 \pi \epsilon_0 } lim_{x\to\infty} \left( \frac{1}{x} - \frac{1}{0} \right) \\
   &= - \frac{Q_A Q_C}{4 \pi \epsilon_0 } \left( 0 - \frac{1}{0} \right)
 \end{align}
 
-Now we find ourselves confronted with the infamous devide by 0 problem and it dawns on us, that bringing a charge
-$Q_C$ ontop on another charge $Q_A$, where the force between the two charges is known to be
+Now we find ourselves confronted with the infamous divide by 0 problem and it dawns on us, that bringing a charge
+$Q_C$ on top on another charge $Q_A$, where the force between the two charges is known to be
 
-\begin{align} \label{eq:3}
+\begin{align} \label{eq:6}
 F &= \frac{Q_A  Q_C}{4 \pi \epsilon_0 r^2}
 \end{align}
 
 will lead to a infinitely large force pushing $Q_C$ away from $Q_A$. After checking that a integral of the form of
 
-\begin{align} \label{eq:3}
+\begin{align} \label{eq:7}
 \int_\infty^0{\frac{1}{r^2}} \cdot dr \\
 \end{align}
 
-indeed is disvergant\footnote{ See example 8 here: http://tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegrals.aspx \\ and result here: https://www.wolframalpha.com/input/?i=integral+of+1%2Fx%5E2+from+infinity+to+0
+indeed is divergant\footnote{ See example 8 here: http://tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegrals.aspx \\ and result here: https://www.wolframalpha.com/input/?i=integral+of+1%2Fx%5E2+from+infinity+to+0
 } we give in to the fact that electrons can not exist on top of each other and reinterpret "How much work is necessary to get
 2.5 trillion electrons from infinitely far away to point A" as "How much work is necessary to get
 2.5 trillion electrons from infinitely far away to very close to point A".
 
-\begin{align} \label{eq:4}
+\begin{align} \label{eq:8}
 W &= - lim_{x\to\infty} \int_x^{0.000000001[m]}{\frac{Q_A Q_C}{4 \pi \epsilon_0 r^2}} \cdot dr \\
   &= - \frac{Q_A Q_C}{4 \pi \epsilon_0 } lim_{x\to\infty} \int_x^{0.000000001[m]}{\frac{1}{r^2}} \cdot dr \\
   &= - \frac{Q_A Q_C}{4 \pi \epsilon_0 } lim_{x\to\infty} \left( \frac{1}{x} - \frac{1}{0.000000001[m]} \right) \\
