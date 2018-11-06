@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1541513986 "c:/git/Latex/ChargesEnergiesAndPotentials/assignment.tex" "assignment.pdf" "assignment" 1541514137
-  "assignment.aux" 1541513987 350 aa7bfaa43dd7b94ca021c06c7aebe453 ""
-  "assignment.tex" 1541514136 7455 5e3dbf2bc0e198f4eaa4b7cb975a1c1a ""
-  "c:/git/Latex/ChargesEnergiesAndPotentials/assignment.tex" 1541514136 7455 5e3dbf2bc0e198f4eaa4b7cb975a1c1a ""
+["pdflatex"] 1541514473 "c:/git/Latex/ChargesEnergiesAndPotentials/assignment.tex" "assignment.pdf" "assignment" 1541514475
+  "assignment.aux" 1541514475 350 aa7bfaa43dd7b94ca021c06c7aebe453 ""
+  "assignment.tex" 1541514472 7355 eba473c2048a0cfce726c5095df1c95b ""
+  "c:/git/Latex/ChargesEnergiesAndPotentials/assignment.tex" 1541514472 7355 eba473c2048a0cfce726c5095df1c95b ""
   "i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1541295043 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "i:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1541295283 3332 103109f5612ad95229751940c61aada0 ""
   "i:/texlive/2018/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1541295060 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -83,7 +83,6 @@
   "i:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1541297945 4218685 829e80d08d0cc6676c19b0c3acb47f20 ""
   "i:/texlive/2018/texmf.cnf" 1541297758 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   (generated)
-  "assignment.pdf"
-  "assignment.out"
   "assignment.aux"
+  "assignment.pdf"
   "assignment.log"

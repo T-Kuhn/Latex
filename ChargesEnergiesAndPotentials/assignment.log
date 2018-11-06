@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  6 NOV 2018 23:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  6 NOV 2018 23:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -507,126 +507,127 @@ s
 ) (./assignment.aux)
 \openout1 = `assignment.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 67.
-LaTeX Font Info:    Try loading font information for FML+futm on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 66.
+LaTeX Font Info:    Try loading font information for FML+futm on input line 66.
 
 (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for FMS+futm on input line 67.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 66.
+LaTeX Font Info:    Try loading font information for FMS+futm on input line 66.
 
 
 (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for FMX+futm on input line 67.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 66.
+LaTeX Font Info:    Try loading font information for FMX+futm on input line 66.
 
 
 (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 67.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
 
 (i:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Try loading font information for T1+futs on input line 67.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Try loading font information for T1+futs on input line 66.
 
 (i:/texlive/2018/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 70.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 69.
 
 (i:/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 70
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 69
 .
 
 (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 70.
+(Font)              scaled to size 13.24796pt on input line 69.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 70.
+(Font)              scaled to size 9.19998pt on input line 69.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 70.
+(Font)              scaled to size 7.35999pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 70.
+(Font)              scaled to size 13.24796pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 70.
+(Font)              scaled to size 9.19998pt on input line 69.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 70.
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+(Font)              scaled to size 7.35999pt on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
 
 (i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
 
 (i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
+(Font)              scaled to size 5.51999pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 76.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
+(Font)              scaled to size 5.51999pt on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 100.
+(Font)              scaled to size 8.27998pt on input line 99.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 100.
+(Font)              scaled to size 6.99199pt on input line 99.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 100.
+(Font)              scaled to size 8.27998pt on input line 99.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 100.
+(Font)              scaled to size 6.99199pt on input line 99.
  [1
 
 
-{i:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./assi
-gnment.aux) ) 
+{i:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+] [3] (./assignment.aux) ) 
 Here is how much of TeX's memory you used:
- 5072 strings out of 492639
- 80203 string characters out of 6133088
+ 5069 strings out of 492639
+ 80168 string characters out of 6133088
  350361 words of memory out of 5000000
- 8867 multiletter control sequences out of 15000+600000
- 94615 words of font info for 121 fonts, out of 8000000 for 9000
+ 8866 multiletter control sequences out of 15000+600000
+ 87689 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,51p,9131b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
-{i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<i:/texliv
-e/2018/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/texlive/2018/t
-exmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/2018/texmf-di
-st/fonts/type1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texmf-dist/fonts/
-type1/adobe/utopia/putr8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/uto
-pia/putri8a.pfb>
-Output written on assignment.pdf (3 pages, 48596 bytes).
+{i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}<i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/t
+exlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/
+2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texm
+f-dist/fonts/type1/adobe/utopia/putr8a.pfb><i:/texlive/2018/texmf-dist/fonts/ty
+pe1/adobe/utopia/putri8a.pfb>
+Output written on assignment.pdf (3 pages, 48475 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  24 compressed objects within 1 object stream
