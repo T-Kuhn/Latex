@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  8 NOV 2018 09:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  8 NOV 2018 22:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,6 +508,27 @@ s
 
 LaTeX Warning: Label `eq:8' multiply defined.
 
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
+
+LaTeX Warning: Label `eq:8' multiply defined.
+
 )
 \openout1 = `assignment.aux'.
 
@@ -631,39 +652,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--176
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--181
-
- []
-
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 182--185
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
-[4] (./assignment.aux)
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
+[5] [6] (./assignment.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5084 strings out of 492639
- 80339 string characters out of 6133088
- 350361 words of memory out of 5000000
- 8872 multiletter control sequences out of 15000+600000
+ 5086 strings out of 492639
+ 80351 string characters out of 6133088
+ 351361 words of memory out of 5000000
+ 8874 multiletter control sequences out of 15000+600000
  105335 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,51p,9131b,226s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,51p,9131b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
 {i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<i:/texlive/2018/texm
 f-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/texlive/2018/texmf-dist/f
 onts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/2018/texmf-dist/fonts/ty
 pe1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe
 /utopia/putb8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.
 pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on assignment.pdf (4 pages, 67136 bytes).
+Output written on assignment.pdf (6 pages, 72333 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

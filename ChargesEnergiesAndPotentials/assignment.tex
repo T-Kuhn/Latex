@@ -74,8 +74,8 @@
 \section{Problem One}
 
 \begin{align} 
-Q_A &= -1[C] & W_A &= 60[J] \\
-Q_B &= -2[C] & W_B &= 10[J] 
+Q_A &= -1[C] & W_A &= 60[J] \label{eq:A} \\
+Q_B &= -2[C] & W_B &= 10[J] \label{eq:B}
 \end{align}
 
 Two points A and B exist in a vacuum. They have energies and charges as described above.
@@ -174,6 +174,79 @@ how the problem is meant to be solved; Ignoring the electric fields from charges
 Which is not to say that there is no electric field at all.
 There is one -- because without, the charges wouldn't have potential energies -- but it is implicit. There is no need to calculate it. \\
 
+\subsection{Subproblem a}
+\textbf{Problem: Calculate the electric voltage between the points.}
+
+\begin{quotation}
+According to classical electrostatics, electric potential is a scalar quantity 
+denoted by V or occasionally $\phi$ equal to the electric potential energy of any 
+charged particle at any location (measured in joules) divided by the charge of that 
+particle (measured in coulombs).
+\end{quotation}
+
+Above qoute is from the english Wikipedia entry on the electric potential.
+To solve this problem we leverage the power of classical electrostatics and proclaim that the
+following equation, which connects the electric potential at a point in a static electric field
+to the Charge and potential energy at that point, holds true.
+
+\begin{align} \label{eq:8}
+\phi = \frac{W}{Q}
+\end{align}
+
+Where $\phi$ denotes the electric potential, W the potential energy and Q the Charge.
+Using given values from \ref{eq:A} and \ref{eq:B}:
+
+\begin{align} \label{eq:8}
+\phi_A &= \frac{W_A}{Q_A} \\
+       &= - \frac{60}{1} \left[ \frac{J}{C} \right] \\
+       &= - 60 [V]
+\end{align}
+
+\begin{align} \label{eq:8}
+\phi_B &= \frac{W_B}{Q_B} \\
+       &= - \frac{10}{2} \left[ \frac{J}{C} \right] \\
+       &= - 5 [V]
+\end{align}
+
+Finally, the electric Voltage between point A and B is the difference between 
+the electric potentials, so
+
+\begin{align} \label{eq:8}
+\phi_{AB} &= \phi_B - \phi_A \\
+       &=  55 [V]
+\end{align}
+
+\subsection{Subproblem b}
+\textbf{Problem: Given that the charges where free to move between A and B, what would the resulting
+state be? What's the total amount of energy in the resulting state?} \\
+
+Since we're dealing with negative charges, we know that they will gather at the point with the most
+positive electric potential. In this case, it is point B. So charge $Q_A$ moves to point B.
+By moving from point a to b, work equal to $W_m$ is done.
+
+\begin{align} \label{eq:8}
+W_m &= \phi_{AB} \cdot Q_A \\
+       &=  55[V] \cdot -1[C] \\
+       &=  -55[J]
+\end{align}
+
+Adding this (negative) work to the potantial energy the charge had at point A will yield the new potential
+energy of $Q_A$ at point B.
+
+\begin{align} \label{eq:8}
+W_A' &= W_A + W_m \\
+       &=  60[J] -55[J] \\
+       &=  5[J]
+\end{align}
+
+And the total Energy of this new state is
+
+\begin{align} \label{eq:8}
+W_{total} &= W_A' + W_B \\
+       &=  5[J] + 10[J] \\
+       &=  15[J]
+\end{align}
+
 \subsection{Subproblem c}
 
 \textbf{Problem: How much work in [J] has to be done to get 2.5 trillion electrons from very far away to point A?}
@@ -187,25 +260,18 @@ We observe that it took 60[J] to get a charge of -1[C] to point A. since the wor
 charge in a electric field is proportional to the amount of charge, we come to the conclusion
 that the work necessary to get a charge of -0.4[C] to point A must be 24[J] (ignoring the field from the charge $Q_A$).
 
-\subsection{Subproblem a}
-\textbf{Problem: Calculate the electric voltage between the points.}
+\subsection{Subproblem d}
 
-\begin{quotation}
-According to classical electrostatics, electric potential is a scalar quantity 
-denoted by V or occasionally $\phi$ equal to the electric potential energy of any 
-charged particle at any location (measured in joules) divided by the charge of that 
-particle (measured in coulombs).
-\end{quotation}
+\textbf{Problem: How much is the electric power if half of the charge at point B was 
+moved infinitely far away?} \\
 
-Above qoute is from the english Wikipedia entry on the electric potential.
-To solve this problem we leverage the power of classical electrostatics and proclaim that the
-following statement is true.
+There is a Charge of -2[C] at point B. Half of it is -1[C]. This half of the charge also owns
+half of the potential energy, i.e 5[J]. The electric power is just the rate of work per second
 
 \begin{align} \label{eq:8}
-\phi = \frac{W}{Q}
+P &= \frac{W_B}{2 \cdot t} \\
+  &= \frac{5[J]}{10[s]} \\
+  &=  0.5 [Ws]
 \end{align}
-
-
-
 
 \end{document}
