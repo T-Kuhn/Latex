@@ -55,7 +55,7 @@
 \title{	
 \normalfont \normalsize 
 \horrule{0.5pt} \\[0.4cm] % Thin tp horizontal rule
-\huge Charges, Energies and Potentials\\ % The assignment title
+\huge Charges, Energies and Potentials \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -71,7 +71,7 @@
 %	PROBLEM 1
 %----------------------------------------------------------------------------------------
 
-\section{ Problem One c)}
+\section{Problem One}
 
 \begin{align} 
 Q_A &= -1[C] & W_A &= 60[J] \\
@@ -80,9 +80,11 @@ Q_B &= -2[C] & W_B &= 10[J]
 
 Two points A and B exist in a vacuum. They have energies and charges as described above.
 
-c) How much work is necessary to get 2.5 trillion electrons from infinitely far away to Point A?
+\subsection{Subproblem c}
+\textbf{Problem: How much work in [J] has to be done to get 2.5 trillion electrons from very far away to point A?}
+\\
 
-We start our investigation by calculating the electrostatic charge of $2.5 \cdot 10^{18}$ electrons.
+We start our investigation by guessing that calculating the electrostatic charge of $2.5 \cdot 10^{18}$ electrons.
 
 \begin{equation} \label{eq:1}
 e^- = -1.6 \cdot 10^{-19} [C]
@@ -102,8 +104,6 @@ then the electric field $E$ at any distance r from point A is
 \begin{align} \label{eq:3}
 E &= \frac{Q_A}{4 \pi \epsilon_0 r^2}
 \end{align}
-
-\clearpage
 
 And the force $F$ at any point is
 
@@ -168,17 +168,44 @@ point A. But we don't. So we can't. Sounds fishty? Yeah, let's give this another
 
 %------------------------------------------------
 
-\section{ Problem One c), Second Iteration}
-Everything gets better with the second iteration. This time the author is confident that he is on point with
+\section{ Problem One, Second Iteration}
+This time the author is confident that he is on point with
 how the problem is meant to be solved; Ignoring the electric fields from charges $Q_A$ and $Q_B$.
 Which is not to say that there is no electric field at all.
 There is one -- because without, the charges wouldn't have potential energies -- but it is implicit. There is no need to calculate it. \\
 
+\subsection{Subproblem c}
+
+\textbf{Problem: How much work in [J] has to be done to get 2.5 trillion electrons from very far away to point A?}
+\\
+
 The trick here is to use the conservation of energy. Charge $Q_A$ has a potential
 energy of 60[J] because 60[J] of work was done to get it there (pushing it against the implicit static electric field).
+\\
 
 We observe that it took 60[J] to get a charge of -1[C] to point A. since the work necessary to move a
 charge in a electric field is proportional to the amount of charge, we come to the conclusion
 that the work necessary to get a charge of -0.4[C] to point A must be 24[J] (ignoring the field from the charge $Q_A$).
+
+\subsection{Subproblem a}
+\textbf{Problem: Calculate the electric voltage between the points.}
+
+\begin{quotation}
+According to classical electrostatics, electric potential is a scalar quantity 
+denoted by V or occasionally $\phi$ equal to the electric potential energy of any 
+charged particle at any location (measured in joules) divided by the charge of that 
+particle (measured in coulombs).
+\end{quotation}
+
+Above qoute is from the english Wikipedia entry on the electric potential.
+To solve this problem we leverage the power of classical electrostatics and proclaim that the
+following statement is true.
+
+\begin{align} \label{eq:8}
+\phi = \frac{W}{Q}
+\end{align}
+
+
+
 
 \end{document}
