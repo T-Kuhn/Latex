@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  8 NOV 2018 22:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  31 DEC 2018 15:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,21 +9,15 @@ LaTeX2e <2018-04-01> patch level 5
 (i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent b
-asics and keyval usage)
-
-(i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent 
-basics and keyval usage)
-
-(i:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (i:/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-)
-(i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
-)))
-(i:/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
+))) (i:/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
@@ -31,14 +25,10 @@ Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 134.
-Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input l
-ine 2114.
-
-(i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2018/03/30 v3.25 KOMA-Script font size class option (11pt
-)
-)
-(i:/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
+Class scrartcl Info: File `scrsize11pt.clo' used to setup font sizes on input line 2114.
+ (i:/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2018/03/30 v3.25 KOMA-Script font size class option (11pt)
+) (i:/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2018/03/30 v3.25 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count80
@@ -91,15 +81,12 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count88
 Class scrartcl Info: Redefining `\numberline' on input line 5615.
 \bibindent=\dimen102
-)
-(i:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+ (i:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/fourier.sty
+)) (i:/texlive/2018/texmf-dist/tex/latex/fourier/fourier.sty
 Package: fourier 2005/01/01 1.4 fourier-GUTenberg package
 Now handling font encoding FML ...
 ... no UTF-8 mapping file for font encoding FML
@@ -107,15 +94,12 @@ Now handling font encoding FMS ...
 ... no UTF-8 mapping file for font encoding FMS
 Now handling font encoding FMX ...
 ... no UTF-8 mapping file for font encoding FMX
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+ (i:/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
+ (i:/texlive/2018/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
-(i:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+)) (i:/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -129,13 +113,11 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             Family '?' is the default used for unknown fonts.
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+ (i:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
+ (i:/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -233,7 +215,6 @@ Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
 Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
 Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
 Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
-
 Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
 Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
 Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
@@ -271,8 +252,7 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-)
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/fourier-orns.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/fourier/fourier-orns.sty
 Package: fourier-orns 2004/01/30 1.1 fourier-ornaments package
 )
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 50.
@@ -322,13 +302,11 @@ LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> FMS/futm/m/n on input line 113.
 LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 114.
 LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 1
-14.
+(Font)              `largesymbols' in the math version `normal' on input line 114.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 114.
 LaTeX Font Info:    Encoding `OMX' has changed to `FMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 114
-.
+(Font)              `largesymbols' in the math version `bold' on input line 114.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> FMX/futm/m/n on input line 114.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 115.
@@ -370,46 +348,37 @@ LaTeX Font Info:    Redeclaring math accent \hat on input line 254.
 LaTeX Font Info:    Redeclaring math accent \dot on input line 255.
 LaTeX Font Info:    Redeclaring math accent \mathring on input line 256.
 \symUfutm=\mathgroup5
-)
-(i:/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+) (i:/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2018/10/16 3.26 The Babel package
-
-(i:/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+ (i:/texlive/2018/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2018/10/16 3.26 Babel switching mechanism
-)
-(i:/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
+) (i:/texlive/2018/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
-
-(i:/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+ (i:/texlive/2018/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/10/16 3.26 Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen103
-
-(i:/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+ (i:/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count90
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
-))
-(i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+)) (i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
 (i:/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
-
-(i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen104
-))
-(i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen105
-)
-(i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count91
@@ -449,16 +418,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
-)
-(i:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup6
 \symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 LaTeX Font Info:    Redeclaring math symbol \square on input line 141.
-)
-(i:/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -469,14 +436,11 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@postskip=\skip61
 \thm@headsep=\skip62
 \dth@everypar=\toks25
-)
-(i:/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
+) (i:/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count103
-)
-(i:/texlive/2018/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
-les
+) (i:/texlive/2018/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
 )
 
 Class scrartcl Warning: Usage of package `fancyhdr' together
@@ -493,8 +457,7 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              package `fancyhdr' on input line 34.
 
 (i:/texlive/2018/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
-s
+Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footers
 \f@nch@headwidth=\skip63
 \f@nch@O@elh=\skip64
 \f@nch@O@erh=\skip65
@@ -546,48 +509,38 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 66.
 LaTeX Font Info:    Try loading font information for FML+futm on input line 66.
-
  (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 66.
 LaTeX Font Info:    Try loading font information for FMS+futm on input line 66.
-
-
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/fmsfutm.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 66.
 LaTeX Font Info:    Try loading font information for FMX+futm on input line 66.
-
-
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/fmxfutm.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 66.
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Try loading font information for T1+futs on input line 66.
-
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/t1futs.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/fourier/t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 69.
-
-(i:/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for FML+futmi on input line 69
-.
-
-(i:/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
+LaTeX Font Info:    Try loading font information for FML+futmi on input line 69.
+ (i:/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -603,13 +556,11 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 69.
 LaTeX Font Info:    Try loading font information for U+msa on input line 69.
-
-(i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 69.
-
-(i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (i:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -680,18 +631,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  5086 strings out of 492639
  80351 string characters out of 6133088
- 351361 words of memory out of 5000000
+ 350361 words of memory out of 5000000
  8874 multiletter control sequences out of 15000+600000
  105335 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,11n,51p,9131b,257s stack positions out of 5000i,500n,10000p,200000b,80000s
-{i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<i:/texlive/2018/texm
-f-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/texlive/2018/texmf-dist/f
-onts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/2018/texmf-dist/fonts/ty
-pe1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe
-/utopia/putb8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.
-pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on assignment.pdf (6 pages, 72707 bytes).
+{i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on assignment.pdf (6 pages, 72676 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
