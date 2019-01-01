@@ -1,0 +1,5 @@
+PWD c:/git/Latex/RaindropWithAirResistance
+INPUT i:/texlive/2018/texmf.cnf
+INPUT i:/texlive/2018/texmf-dist/web2c/texmf.cnf
+INPUT i:/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/git/Latex/RaindropWithAirResistance/RaindropWithAirResistance.tex
