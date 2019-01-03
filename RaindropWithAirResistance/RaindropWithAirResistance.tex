@@ -24,11 +24,15 @@
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{cancel}
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{siunitx}
+\sisetup{detect-all}
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -67,38 +71,192 @@
 
 \maketitle % Print the title
 
-\section{The Problem}
+\section{What are we trying to do here?}
 
-We want to spend some time thinking about raindrops and air resistance.
+We want to spend some time thinking about raindrops and air resistance. 
 In particular, we want to find a function $v_y(t)$ which maps time $t$ to the velocity 
-of the raindrop. \\
+of a falling raindrop. \vspace{\baselineskip}
 
 We assume that our mathematical raindrop has both a constant mass and a fixed shape.
-The constant mass is important because a change in mass -- a real raindrop might lose some of its water molecules while 
-falling through the air -- would lead to a change in terminal velocity
-\footnote{ https://journals.ametsoc.org/doi/pdf/10.1175/1520-0450\%281969\%29008\%3C0249\%3ATVORA\%3E2.0.CO\%3B2 }.
-\\
-
-Furthermore, we assume that there is no wind and the only forces governing the raindrops movement
-are $F_g$ (gravitational pull) and $F_r$ (air resistance)
-\\
-
-The air resistance in our model is proportional to $v_y(t)^2$. We introduce constant $k$ to ...
-
-\begin{align} \label{eq:6}
+Furthermore, we assume that there is no wind and the only forces governing the raindrops movement are 
+$F_g$ (gravitational pull) and $F_r$ (air resistance).
+\begin{align} \label{eq:1}
+F_{tot} &= F_g - F_r
+\end{align}
+The air resistance in our model is proportional to $v_y(t)^2$.\footnote{Quadratic drag models the air resistance sensibly at 
+high velocities (i.e. high Reynolds number, Re > ~1000). Our raindrop has a Re of about 3000.} We also introduce air resistance coefficient $k$ 
+which allows us to adjust our air resistance curve to be as close as possible to the real air resistance a falling drop would experience
+at fairly high velocities.
+\begin{align} \label{eq:2}
 F_r &= k \cdot v_y(t)^2
 \end{align}
+But what is a good value for $k$? Seeking for a fitting coefficient $k$, we stumble upon a 1969 paper 
+by G. B. Foote and P. S. Du Toit titled \textit{Terminal Velocity of Raindrops Aloft}.
+\footnote{ https://journals.ametsoc.org/doi/pdf/10.1175/1520-0450\%281969\%29008\%3C0249\%3ATVORA\%3E2.0.CO\%3B2 }
+\vspace{\baselineskip}
 
-We expect the velocity
-to converge to some terminal value $V_t$.
-Thus, we expect the unknown function $v_y(t)$ to rise steep (start of the fall) and then flatten out (converging to terminal velocity). 
-\\
+Armed with this paper, we go through a few steps which conclude in a value for our air resistance coefficient $k$.
+First, we use figure 2 on page 251 to determine the terminal velocity $V$ of a raindrop with a diameter of $5[\si{\milli\meter}]$
+at an atmospheric pressure of $1013[\si{\milli\bar}]$ and get $9.1[\si{\meter\per\second}]$.
+Next we use the terminal velocity $V$, the radius $r$ and the kinematic viscosity of the air $\nu$ to calculate Reynolds number $R_e$.
+\begin{align} \label{eq:3}
+R_e &= \frac{2rV}{\nu} \\
+    &= \frac{2 \cdot 0.005[\si{\meter}] \cdot 9.1 [\si{\meter\per\second}]}{1.516 \cdot 10^{-5}[\si{\meter\squared\per\second}]} \\
+    &= 3001.0
+\end{align}
+Now that we've got Reynolds number for our specific raindrop, we are able to get drag coefficient $C_D$ by consulting figure 1
+on page 250. We get a value of 0.645. Armed with the drag coefficient $C_D$, radius $r$ and air density 
+$\rho$, we are finally able to compute the magnitude of air resistance coefficient $k$ using equation (1) on page 249.
+\begin{align} \label{eq:4}
+k &= \frac{1}{2} \rho C_D \pi r^2 \\
+  &= \frac{1}{2} \cdot 1.225 [\si{\kilogram\per\meter\cubed}] \cdot 0.645 \cdot \pi \cdot 2.5 \cdot 10^{-5} [\si{\meter\squared}] \\
+  &=  3.103 [\si{\kilogram\per\meter}]
+\end{align}
+Note how the air resistance coefficient $k$ comes with the SI units [\si{\kilogram\per\meter}].
+When using $k$ in (\ref{eq:2}) we expect the resulting SI units to be [\si{\kilogram\meter\per\second\squared}].
+\begin{align} \label{eq:5}
+F_r &= k \cdot v_y(t)^2 \\
+[\si{\kilogram\meter\per\second\squared}]  &= [\si{\kilogram\per\meter}] \cdot [\si{\meter\squared\per\second\squared}] \\
+  &= [\si{\kilogram\meter\per\second\squared}]
+\end{align}
+And indeed, [\si{\kilogram\meter\per\second\squared}] is what we get.
 
+\section{the equation of motion}
+Now we are finally ready to construct and solve the differential equation of our raindrop model.
+We start by taking a closer look at equation (\ref{eq:1}). Here it is again:
+\begin{align}
+F_{tot} &= F_g - F_r. \tag{\ref{eq:1}}
+\end{align}
+Adding all the Forces working on our raindrop yields $F_{tot}$. And since $F_{tot}$ accounts for all the forces, we can use it to
+calculate the resulting acceleration by inserting the famous 
+\begin{align} \label{eq:6}
+F &= m \cdot a_y(t).
+\end{align}
+Doing this, we get
+\begin{align} \label{eq:7}
+m \cdot a_y(t) &= F_g - F_r. 
+\end{align}
+Next we insert the following two equations 
+\begin{align}
+F_g &= m \cdot g \label{eq:8} \\
+F_r &= k \cdot v_y(t)^2 \tag{\ref{eq:2}}
+\end{align}
+($g$ being the acceleration of gravity) into (\ref{eq:7}) and get
+\begin{align} \label{eq:9}
+m \cdot a_y(t) &= m \cdot g - k \cdot v_y(t)^2. 
+\end{align}
+And finally, we rewrite $a_y(t)$ as the derivative of $v_y(t)$ and arrive at
+\begin{align} \label{eq:10}
+m \cdot \frac{d}{dt} v_y(t) &= m \cdot g - k \cdot v_y(t)^2. 
+\end{align}
+Now we got the newtonian equation of motion for our raindrop. We want find a specific function $v_y(t)$ which, 
+when plugged into this equation satisfies it at any value t.
+\section{Solving the differential equation}
+We start by tidying up (\ref{eq:10}) by dividing both sides of the equation by $m$
+\begin{align} \label{eq:11}
+\frac{d}{dt} v_y(t) &= g - \frac{k}{m} \cdot v_y(t)^2
+\end{align}
+Next we get everything ready for the first ingenious math technique by isolating $g$
+\begin{align} \label{eq:12}
+\frac{d}{dt} v_y(t) &= g \left(1 - \frac{k}{gm} \cdot v_y(t)^2\right)
+\end{align}
+and introducing $\beta$ as a placeholder variable to get rid of some of the clutter:
+\begin{align} \label{eq:13}
+\beta^2 &= \frac{k}{gm}
+\end{align}
+this placeholder variable enables us to rewrite (\ref{eq:12}) as
 
+\begin{align} \label{eq:12}
+\frac{d}{dt} v_y(t) &= g \left(1 - \beta^2 \cdot v_y^2\right) \\
+                    &= g \left(1 - (\beta \cdot v_y)^2\right) \\
+                    &= g \left((1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)\right)
+\end{align}
+Starting at (\ref{eq:12}) we are shortening $v_y(t)$ to $v_y$ to make the equations easier to read. This is merely a cosmetic change
+ -- $v_y$ is still a function of $t$. Now we divide both sides of the equation by the expression in the brackets. This yields
+\begin{align} \label{eq:13}
+\frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt}  &= g.
+\end{align}
+Next we switch around the terms to make the equation a bit more pleasant to look at.
+\begin{align} \label{eq:14}
+g  &= \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt}
+\end{align}
+We take the integral with respect to t on both sides of the equation.
+\begin{align} \label{eq:15}
+\int g \cdot dt &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt} \cdot dt
+\end{align}
+The left side of the equation becomes $g \cdot t + C_1$. $C_1$ being the constant of integration.
+But what about the right side?
+\begin{align} 
+g \cdot t + C_1 &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{\cancel{dt}} \cdot \cancel{dt} \label{eq:16}\\
+                &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot d v_y \label{eq:17}
+\end{align}
+But what about the right side? The two $dt$ terms cancel out leaving us with with an integral with respect to $dv_y$.
+The cancellation of the two $dt$ terms is the first ingenious math technique used on the journey to solution of this differential equation.
+\vspace{\baselineskip}
 
-\section{The Math}
+But we still need to actually solve the integral on the right side. What holds us back is the squared $v_y$, which emerges as soon as we
+multiply out all the terms in the denominator. But why did we rearrange the terms in the denominator anyway? This is because we are about to
+use partial-fraction decomposition on it. We want to concentrate on the partial-fraction decomposition, so let's 
+forget about the integral and let $p$ be the fraction inside the integral of equation (\ref{eq:17}).
+\begin{align} \label{eq:18}
+p &= \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)}
+\end{align}
+Let's examine the nominator. It is 1. What if we defined the following equation?
+\begin{align} \label{eq:19}
+1 &= A \cdot (1 - \beta \cdot v_y) + B \cdot (1 + \beta \cdot v_y)
+\end{align}
+Equation (\ref{eq:19}) also evaluates to 1, so clearly we are able to insert it in the nominator of equation (\ref{eq:18})
+which gives us
+\begin{align} 
+p &= \frac{A \cdot (1 - \beta \cdot v_y) + B \cdot (1 + \beta \cdot v_y)}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \\
+  &= \frac{A \cdot \cancel{(1 - \beta \cdot v_y)}}{\cancel{(1 - \beta \cdot v_y)}\cdot (1 + \beta \cdot v_y)} +
+     \frac{B \cdot \cancel{(1 + \beta \cdot v_y)}}{(1 - \beta \cdot v_y)\cdot \cancel{(1 + \beta \cdot v_y)}} \\
+  &= \frac{A}{1 + \beta \cdot v_y} + \frac{B}{1 - \beta \cdot v_y} \label{eq:20}
+\end{align}
 
-\section{The Solution}
-
+The resulting equation (\ref{eq:20}) will allow us to finally compute the integral in (\ref{eq:17}). The only thing left to do is to get
+specific values for A and B. Clearly, equation (\ref{eq:19}) doesn't hold true for any value $A$ and $B$. But what are the values which, when
+inserted, keep (\ref{eq:19}) satisfied no matter what magnitude $v_y(t)$ takes on? Since equation (\ref{eq:19}) has to hold true
+for any value a generic function $v_y(t)$ might return, it also has to hold true for the following two cases:
+\begin{align}
+v_y(t) &= \frac{1}{\beta}  \label{eq:21} \\
+v_y(t) &= - \frac{1}{\beta} \label{eq:22}
+\end{align}
+Inserting (\ref{eq:21}) into (\ref{eq:19}) yields
+\begin{align} 
+1 &= A \cdot (1 - \beta \cdot \frac{1}{\beta}) + B \cdot (1 + \beta \cdot \frac{1}{\beta}) \\
+  &= A \cdot (1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) + B \cdot (1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) \\
+  &= A \cdot (1 - 1) + B \cdot (1 + 1) \\
+  &= A \cdot 0 + B \cdot 2 \\
+  &= 2B. \label{eq:23}
+\end{align}
+From (\ref{eq:23}) we conclude that
+\begin{align}
+B &= \frac{1}{2}.  \label{eq:24}
+\end{align}
+Likewise, inserting (\ref{eq:22}) into (\ref{eq:19}) yields
+\begin{align} 
+1 &= A \cdot (1 - \beta \cdot -\frac{1}{\beta}) + B \cdot (1 + \beta \cdot -\frac{1}{\beta}) \\
+  &= A \cdot (1 + \beta \cdot \frac{1}{\beta}) + B \cdot (1 - \beta \cdot \frac{1}{\beta}) \\
+  &= A \cdot (1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) + B \cdot (1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) \\
+  &= A \cdot (1 + 1) + B \cdot (1 - 1) \\
+  &= A \cdot 2 + B \cdot 0 \\
+  &= 2A \label{eq:25}
+\end{align}
+From (\ref{eq:25}) we conclude that
+\begin{align}
+A &= \frac{1}{2}.  \label{eq:24}
+\end{align}
+We insert above results for $A$ and $B$ into equation (\ref{eq:20}) and get
+\begin{align}
+  p &= \frac{1}{2}\left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right). \label{eq:25}
+\end{align}
+We let $p$ be the expression inside the integral. Let's put it back into \ref{eq:17} and finally compute the integral.
+\begin{align} 
+g t + C_1  &= \frac{1}{2} \cdot \int \left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right) \cdot d v_y \label{eq:26} \\
+2g t + C_2 &= \int \left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right) \cdot d v_y \\
+           &= \int (1 + \beta \cdot v_y)^{-1} d v_y + \int (1 - \beta \cdot v_y)^{-1} d v_y \\
+           &=  \frac{1}{\beta} \cdot \ln{|1 + \beta \cdot v_y|} - \frac{1}{\beta} \cdot \ln{|1 - \beta \cdot v_y|} + C_3
+\end{align}
 
 \end{document}
