@@ -25,11 +25,14 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage{cancel}
+\usepackage{graphicx}
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
 \usepackage{sectsty} % Allows customizing section commands
 \allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{svg}
 
 \usepackage{siunitx}
 \sisetup{detect-all}
@@ -97,20 +100,23 @@ by G. B. Foote and P. S. Du Toit titled \textit{Terminal Velocity of Raindrops A
 
 Armed with this paper, we go through a few steps which conclude in a value for our air resistance coefficient $k$.
 First, we use figure 2 on page 251 to determine the terminal velocity $V$ of a raindrop with a diameter of $5[\si{\milli\meter}]$
-at an atmospheric pressure of $1013[\si{\milli\bar}]$ and get $9.1[\si{\meter\per\second}]$.
+at an atmospheric pressure of $1013[\si{\milli\bar}]$ and get 
+\begin{align} \label{eq:2.5}
+V &= 9.1[\si{\meter\per\second}].
+\end{align}
 Next we use the terminal velocity $V$, the radius $r$ and the kinematic viscosity of the air $\nu$ to calculate Reynolds number $R_e$.
 \begin{align} \label{eq:3}
 R_e &= \frac{2rV}{\nu} \\
-    &= \frac{2 \cdot 0.005[\si{\meter}] \cdot 9.1 [\si{\meter\per\second}]}{1.516 \cdot 10^{-5}[\si{\meter\squared\per\second}]} \\
+    &= \frac{2 \cdot 0.0025[\si{\meter}] \cdot 9.1 [\si{\meter\per\second}]}{1.516 \cdot 10^{-5}[\si{\meter\squared\per\second}]} \\
     &= 3001.0
 \end{align}
 Now that we've got Reynolds number for our specific raindrop, we are able to get drag coefficient $C_D$ by consulting figure 1
 on page 250. We get a value of 0.645. Armed with the drag coefficient $C_D$, radius $r$ and air density 
-$\rho$, we are finally able to compute the magnitude of air resistance coefficient $k$ using equation (1) on page 249.
+$\rho$, we are finally able to calculate the magnitude of air resistance coefficient $k$ using equation (1) on page 249.
 \begin{align} \label{eq:4}
 k &= \frac{1}{2} \rho C_D \pi r^2 \\
-  &= \frac{1}{2} \cdot 1.225 [\si{\kilogram\per\meter\cubed}] \cdot 0.645 \cdot \pi \cdot 2.5 \cdot 10^{-5} [\si{\meter\squared}] \\
-  &=  3.103 [\si{\kilogram\per\meter}]
+  &= \frac{1}{2} \cdot 1.225 [\si{\kilogram\per\meter\cubed}] \cdot 0.645 \cdot \pi \cdot 6.25 \cdot 10^{-6} [\si{\meter\squared}] \\
+  &=  7.757 \cdot 10^{-6}[\si{\kilogram\per\meter}]
 \end{align}
 Note how the air resistance coefficient $k$ comes with the SI units [\si{\kilogram\per\meter}].
 When using $k$ in (\ref{eq:2}) we expect the resulting SI units to be [\si{\kilogram\meter\per\second\squared}].
@@ -166,32 +172,31 @@ and introducing $\beta$ as a placeholder variable to get rid of some of the clut
 \end{align}
 this placeholder variable enables us to rewrite (\ref{eq:12}) as
 
-\begin{align} \label{eq:12}
-\frac{d}{dt} v_y(t) &= g \left(1 - \beta^2 \cdot v_y^2\right) \\
-                    &= g \left(1 - (\beta \cdot v_y)^2\right) \\
-                    &= g \left((1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)\right)
+\begin{align} \label{eq:13.1}
+\frac{d}{dt} v_y &= g \left(1 - \beta^2 v_y^2\right) \\
+                    &= g \left(1^2 - (\beta v_y)^2\right) \\
+                    &= g \left((1 - \beta v_y)\cdot (1 + \beta v_y)\right)
 \end{align}
-Starting at (\ref{eq:12}) we are shortening $v_y(t)$ to $v_y$ to make the equations easier to read. This is merely a cosmetic change
- -- $v_y$ is still a function of $t$. Now we divide both sides of the equation by the expression in the brackets. This yields
-\begin{align} \label{eq:13}
-\frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt}  &= g.
+Starting at (\ref{eq:13.1}) we are shortening $v_y(t)$ to $v_y$ to make the equations easier to read. Now we divide both sides of the equation by the expression in the brackets. This yields
+\begin{align} \label{eq:13.2}
+\frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \cdot \frac{d v_y}{dt}  &= g.
 \end{align}
 Next we switch around the terms to make the equation a bit more pleasant to look at.
 \begin{align} \label{eq:14}
-g  &= \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt}
+g  &= \frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \cdot \frac{d v_y}{dt}
 \end{align}
 We take the integral with respect to t on both sides of the equation.
 \begin{align} \label{eq:15}
-\int g \cdot dt &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{dt} \cdot dt
+\int g \cdot dt &= \int \frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \cdot \frac{d v_y}{dt} \cdot dt
 \end{align}
 The left side of the equation becomes $g \cdot t + C_1$. $C_1$ being the constant of integration.
 But what about the right side?
 \begin{align} 
-g \cdot t + C_1 &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot \frac{d v_y}{\cancel{dt}} \cdot \cancel{dt} \label{eq:16}\\
-                &= \int \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \cdot d v_y \label{eq:17}
+g \cdot t + C_1 &= \int \frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \cdot \frac{d v_y}{\cancel{dt}} \cdot \cancel{dt} \label{eq:16}\\
+                &= \int \frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \cdot d v_y \label{eq:17}
 \end{align}
-But what about the right side? The two $dt$ terms cancel out leaving us with with an integral with respect to $dv_y$.
-The cancellation of the two $dt$ terms is the first ingenious math technique used on the journey to solution of this differential equation.
+The two $dt$ terms cancel out leaving us with with an integral with respect to $dv_y$.
+The cancellation of the two $dt$ terms is the first ingenious math technique used on the journey to the solution of this differential equation.
 \vspace{\baselineskip}
 
 But we still need to actually solve the integral on the right side. What holds us back is the squared $v_y$, which emerges as soon as we
@@ -199,19 +204,19 @@ multiply out all the terms in the denominator. But why did we rearrange the term
 use partial-fraction decomposition on it. We want to concentrate on the partial-fraction decomposition, so let's 
 forget about the integral and let $p$ be the fraction inside the integral of equation (\ref{eq:17}).
 \begin{align} \label{eq:18}
-p &= \frac{1}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)}
+p &= \frac{1}{(1 - \beta v_y)\cdot (1 + \beta v_y)}
 \end{align}
 Let's examine the nominator. It is 1. What if we defined the following equation?
 \begin{align} \label{eq:19}
-1 &= A \cdot (1 - \beta \cdot v_y) + B \cdot (1 + \beta \cdot v_y)
+1 &= A \cdot (1 - \beta v_y) + B \cdot (1 + \beta v_y)
 \end{align}
 Equation (\ref{eq:19}) also evaluates to 1, so clearly we are able to insert it in the nominator of equation (\ref{eq:18})
 which gives us
 \begin{align} 
-p &= \frac{A \cdot (1 - \beta \cdot v_y) + B \cdot (1 + \beta \cdot v_y)}{(1 - \beta \cdot v_y)\cdot (1 + \beta \cdot v_y)} \\
-  &= \frac{A \cdot \cancel{(1 - \beta \cdot v_y)}}{\cancel{(1 - \beta \cdot v_y)}\cdot (1 + \beta \cdot v_y)} +
-     \frac{B \cdot \cancel{(1 + \beta \cdot v_y)}}{(1 - \beta \cdot v_y)\cdot \cancel{(1 + \beta \cdot v_y)}} \\
-  &= \frac{A}{1 + \beta \cdot v_y} + \frac{B}{1 - \beta \cdot v_y} \label{eq:20}
+p &= \frac{A \cdot (1 - \beta v_y) + B \cdot (1 + \beta v_y)}{(1 - \beta v_y)\cdot (1 + \beta v_y)} \\
+  &= \frac{A \cdot \cancel{(1 - \beta v_y)}}{\cancel{(1 - \beta v_y)}\cdot (1 + \beta v_y)} +
+     \frac{B \cdot \cancel{(1 + \beta v_y)}}{(1 - \beta v_y)\cdot \cancel{(1 + \beta v_y)}} \\
+  &= \frac{A}{1 + \beta v_y} + \frac{B}{1 - \beta v_y} \label{eq:20}
 \end{align}
 
 The resulting equation (\ref{eq:20}) will allow us to finally compute the integral in (\ref{eq:17}). The only thing left to do is to get
@@ -224,10 +229,10 @@ v_y(t) &= - \frac{1}{\beta} \label{eq:22}
 \end{align}
 Inserting (\ref{eq:21}) into (\ref{eq:19}) yields
 \begin{align} 
-1 &= A \cdot (1 - \beta \cdot \frac{1}{\beta}) + B \cdot (1 + \beta \cdot \frac{1}{\beta}) \\
-  &= A \cdot (1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) + B \cdot (1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) \\
-  &= A \cdot (1 - 1) + B \cdot (1 + 1) \\
-  &= A \cdot 0 + B \cdot 2 \\
+1 &= A \left(1 - \beta \cdot \frac{1}{\beta}\right) + B \left(1 + \beta \cdot \frac{1}{\beta}\right) \\
+  &= A \left(1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}\right) + B \left(1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}\right) \\
+  &= A (1 - 1) + B (1 + 1) \\
+  &= A 0 + B 2 \\
   &= 2B. \label{eq:23}
 \end{align}
 From (\ref{eq:23}) we conclude that
@@ -236,12 +241,12 @@ B &= \frac{1}{2}.  \label{eq:24}
 \end{align}
 Likewise, inserting (\ref{eq:22}) into (\ref{eq:19}) yields
 \begin{align} 
-1 &= A \cdot (1 - \beta \cdot -\frac{1}{\beta}) + B \cdot (1 + \beta \cdot -\frac{1}{\beta}) \\
-  &= A \cdot (1 + \beta \cdot \frac{1}{\beta}) + B \cdot (1 - \beta \cdot \frac{1}{\beta}) \\
-  &= A \cdot (1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) + B \cdot (1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}) \\
-  &= A \cdot (1 + 1) + B \cdot (1 - 1) \\
-  &= A \cdot 2 + B \cdot 0 \\
-  &= 2A \label{eq:25}
+1 &= A \left(1 - \beta \cdot -\frac{1}{\beta}\right) + B \left(1 + \beta \cdot -\frac{1}{\beta}\right) \\
+  &= A \left(1 + \beta \cdot \frac{1}{\beta}\right) + B \left(1 - \beta \cdot \frac{1}{\beta}\right) \\
+  &= A \left(1 + \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}\right) + B \left(1 - \cancel{\beta} \cdot \frac{1}{\cancel{\beta}}\right) \\
+  &= A (1 + 1) + B (1 - 1) \\
+  &= A 2 + B 0 \\
+  &= 2A. \label{eq:25}
 \end{align}
 From (\ref{eq:25}) we conclude that
 \begin{align}
@@ -249,14 +254,95 @@ A &= \frac{1}{2}.  \label{eq:24}
 \end{align}
 We insert above results for $A$ and $B$ into equation (\ref{eq:20}) and get
 \begin{align}
-  p &= \frac{1}{2}\left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right). \label{eq:25}
+  p &= \frac{1}{2}\left(\frac{1}{1 + \beta v_y} + \frac{1}{1 - \beta v_y}\right). \label{eq:25}
 \end{align}
-We let $p$ be the expression inside the integral. Let's put it back into \ref{eq:17} and finally compute the integral.
+Let's put $p$ back into \ref{eq:17} and finally calculate the integral.
 \begin{align} 
-g t + C_1  &= \frac{1}{2} \cdot \int \left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right) \cdot d v_y \label{eq:26} \\
-2g t + C_2 &= \int \left(\frac{1}{1 + \beta \cdot v_y} + \frac{1}{1 - \beta \cdot v_y}\right) \cdot d v_y \\
-           &= \int (1 + \beta \cdot v_y)^{-1} d v_y + \int (1 - \beta \cdot v_y)^{-1} d v_y \\
-           &=  \frac{1}{\beta} \cdot \ln{|1 + \beta \cdot v_y|} - \frac{1}{\beta} \cdot \ln{|1 - \beta \cdot v_y|} + C_3
+g t + C_1  &= \frac{1}{2} \int \left(\frac{1}{1 + \beta v_y} + \frac{1}{1 - \beta v_y}\right) d v_y  \\
+2g t + C_2 &= \int \left(\frac{1}{1 + \beta v_y} + \frac{1}{1 - \beta v_y}\right) d v_y \\
+           &= \int (1 + \beta v_y)^{-1} d v_y + \int (1 - \beta v_y)^{-1} d v_y \\
+           &=  \frac{1}{\beta} \ln{\left|1 + \beta v_y \right|} -
+               \frac{1}{\beta} \ln{\left|1 - \beta v_y \right|} + C_3 \\
+           &=  \frac{1}{\beta} \left( \ln{\left|1 + \beta v_y \right|} -
+               \ln{\left|1 - \beta v_y \right|} \right) + C_3 \label{eq:26}
 \end{align}
+Because $log(a) - log(b) = log(\frac{a}{b})$, we can rewrite (\ref{eq:26}) as
+\begin{align} 
+2g t + C_4 &=  \frac{1}{\beta} \ln{\left|\frac{1 + \beta v_y}{1 - \beta v_y} \right|} \label{eq:27}
+\end{align}
+We are taking the absolute value of the expression inside the natural logarithm because logarithms only work with
+positive numbers. If we are able to show that $1 - \beta v_y \geq 0$ over the complete range of $v_y(t)$ we can
+get rid of the absolute value signs since we are certain that the expression will be positive.
+
+To examine the Range of $v_y(t)$,
+we first acknowledge the fact that $|F_g| \geq |F_r|$ will always be true and thus the velocity will always be positive 
+(we have setup the equation of motion in such a way that positive means downwards/towards the earth.) Therefore, $v_y(t) \geq 0$ over the 
+complete domain $0 \leq t \leq \infty$. From (\ref{eq:2.5}) we also know that terminal velocity $V = 9.1[\si{\meter\per\second}]$.
+Thus, the Range of $v_y(t)$ is 
+\begin{equation} 
+0 \leq v_y(t) \leq 9.1[\si{\meter\per\second}].
+\end{equation}
+But what about $\beta$? In (\ref{eq:13}) we defined $\beta$ as follows:
+\begin{align} \label{eq:13.1}
+\beta^2 &= \frac{k}{gm}
+\end{align}
+Therefore,
+\begin{align} \label{eq:28}
+\beta &= \sqrt{\frac{k}{gm}}.
+\end{align}
+We know the $k$ and $g$, and from yet another raindrop related paper
+\footnote{Humphreys, W. J. Physics of the Air. New York: Dover, 1964: 279} we know that our raindrop, which we decided to have a diameter of
+$d = 5 [\si{\milli\meter}]$, has a mass $m = 70 [\si{\milli\gram}]$.
+It follows then, that
+\begin{align} \label{eq:29}
+\beta &= \sqrt{\frac{k}{gm}}. \\
+      &= \sqrt{\frac{7.757 \cdot 10^{-6}[\si{\kilogram\per\meter}]}{9.81 [\si{\meter\per\second\squared}] \cdot 7 \cdot 10^{-5} [\si{\kilo\gram}]}} \\
+      &= 0.106 [\si{\meter\per\kilo\gram}].
+\end{align}
+Using terminal velocity $V$ and the calculated value for $\beta$, we calculate the maximum value $\beta v_y$ is able to take as follows 
+\begin{align} 
+\beta V &= 0.106 [\si{\meter\per\kilo\gram}] \cdot 9.1[\si{\meter\per\second}] \\
+        &= 0.9646 [\si{\meter\squared\per\second\per\kilo\gram}] .\label{eq:30}
+\end{align}
+Because of (\ref{eq:30}), we know that $1 - \beta v_y \geq 0$ holds true over the complete range of $v_y(t)$. And thus we are able to
+get rid of the absolute value signs in (\ref{eq:27}), arriving at
+\begin{align} 
+2g t + C_4 &=  \frac{1}{\beta} \ln{\left(\frac{1 + \beta v_y}{1 - \beta v_y} \right)} \label{eq:31}
+\end{align}
+This is a good time to decide what to do with differential constant $C_4$. $C_4$s physical meaning is equivalent 
+to that of the start velocity of our model at $t = 0$. We want the raindrop to start at $v_y(t_0) = 0 [\si{\meter\per\second}]$.
+Therefore, we set it to 0.
+\begin{align} 
+2 g \beta t &=  \ln{\left(\frac{1 + \beta v_y}{1 - \beta v_y} \right)} \label{eq:32}
+\end{align}
+So far so good. But how are we supposed to solve [\ref{eq:32}] for $v_y$? Yet another ingenious math strategy is about to unfold.
+Let's recall the very basic concept of what an logarithm is:
+\begin{align} 
+3 &=  \log_{10}{(1000)} \label{eq:33}
+\end{align}
+Question: To what power do I raise 10 to get 1000?
+
+Answer: 3.
+\vspace{\baselineskip}
+
+That's what algorithms are all about. And it is easy to see how we are able to rearrange the variables in (\ref{eq:33})
+to get
+\begin{align} 
+10^3 &=  1000 \label{eq:34}
+\end{align}
+Applying the same rearrangement operation to (\ref{eq:32}) yields
+\begin{align} 
+e^{2 g \beta t} &=  \frac{1 + \beta v_y}{1 - \beta v_y}. \label{eq:33}
+\end{align}
+We're almost there. Some more variable shuffling and we arrive at the final solution
+\begin{align} 
+e^{2 g \beta t} &=  \frac{1 + \beta v_y}{1 - \beta v_y} \\
+e^{2 g \beta t} \cdot \left(1 - \beta v_y \right) &= 1 + \beta v_y  \\
+e^{2 g \beta t} - e^{2 g \beta t}\beta v_y &= 1 + \beta v_y  \\
+e^{2 g \beta t} - 1 &= \beta v_y (1 + e^{2 g \beta t}) \\
+v_y(t) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t} - 1}{e^{2 g \beta t} + 1}.
+\end{align}
+
+\includegraphics[width=.95\linewidth]{graph}
 
 \end{document}
