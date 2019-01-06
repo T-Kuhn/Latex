@@ -372,17 +372,17 @@ equation (\ref{eq:38}) becomes
 V_t &=  \frac{1}{\beta} \cdot \frac{1 - 0}{1 + 0}. \label{eq:39} \\
     &=  \frac{1}{\beta} . \label{eq:40}
 \end{align}
-This turns out to be quite a surprise. The $/beta$, which we created merely as a way to keep our equations from getting too cluttered,
-turns out to be the terminal Velocity $Vt$! We already calculated $\beta$ to be 0.106 [\si{\per\meter\second}] in equation (\ref{eq:29}).
+This turns out to be quite a surprise. The $\beta$, which we created merely as a way to keep our equations from getting too cluttered,
+turns out to be the terminal Velocity $V_t$! We already calculated $\beta$ to be 0.106 [\si{\per\meter\second}] in equation (\ref{eq:29}).
 Using this result to calculate $V_t$ we get
 \begin{align} 
 V_t &=  \frac{1}{0.106 [\si{\per\meter\second}]} \\
     &=  9.434 [\si{\meter\per\second}]
 \end{align}
-The units are right as well. Everything's falling into it's place. Remember how we had to show that $1 - \beta v_y \geq 0$ is true
+The units are spot on as well. Everything's falling into its place. Remember how we had to show that $1 - \beta v_y \geq 0$ is true
 for the complete range of $v_y(t)$ to get rid of the absolute value signs in the equation below?
 \begin{align} 
-2g t + C_4 &=  \frac{1}{\beta} \ln{\left|\frac{1 + \beta v_y}{1 - \beta v_y} \right|}
+2g t + C_4 &=  \frac{1}{\beta} \ln{\left|\frac{1 + \beta v_y}{1 - \beta v_y} \right|} \tag{\ref{eq:27}}
 \end{align}
 We barely managed to do so in (\ref{eq:30}), but it wasn't very mathematical at all. We crudely used terminal velocity $V$ to vouch for us
 that $v_y(t)$ wouldn't get too big and we are indeed able to get rid of those absolute value signs.
@@ -391,5 +391,6 @@ Armed with our new shiny $V_t = \beta^{-1}$ we can show that $1 - \beta v_y \geq
   1 - \beta \cdot V_t &= 1 - \beta \cdot \beta^{-1} \\
   &= 0 \geq 0
 \end{align}
+And that's the end of our journey to solve the differential equation of a falling raindrop with air resistance proportional to the velocity squared. 
 
 \end{document}
