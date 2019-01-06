@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  6 JAN 2019 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.11.4)  6 JAN 2019 22:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -917,13 +917,13 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  18831 strings out of 492639
  362099 string characters out of 6133088
- 601808 words of memory out of 5000000
+ 602808 words of memory out of 5000000
  22486 multiletter control sequences out of 15000+600000
  706884 words of font info for 229 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,21n,71p,9143b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
 {i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}<i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb><i:/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><i:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb><i:/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on RaindropWithAirResistance.pdf (9 pages, 78110 bytes).
+Output written on RaindropWithAirResistance.pdf (9 pages, 78140 bytes).
 PDF statistics:
  69 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
