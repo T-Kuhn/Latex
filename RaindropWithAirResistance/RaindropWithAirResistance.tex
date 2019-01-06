@@ -155,7 +155,7 @@ And finally, we rewrite $a_y(t)$ as the derivative of $v_y(t)$ and arrive at
 \begin{align} \label{eq:10}
 m \cdot \frac{d}{dt} v_y(t) &= m \cdot g - k \cdot v_y(t)^2. 
 \end{align}
-Now we got the newtonian equation of motion for our raindrop. We want find a specific function $v_y(t)$ which, 
+Now we got the newtonian equation of motion for our raindrop. We want to find a specific function $v_y(t)$ which, 
 when plugged into this equation satisfies it at any value t.
 \section{Solving the differential equation}
 We start by tidying up (\ref{eq:10}) by dividing both sides of the equation by $m$
@@ -294,15 +294,15 @@ We know the $k$ and $g$, and from yet another raindrop related paper
 \footnote{Humphreys, W. J. Physics of the Air. New York: Dover, 1964: 279} we know that our raindrop, which we decided to have a diameter of
 $d = 5 [\si{\milli\meter}]$, has a mass $m = 70 [\si{\milli\gram}]$.
 It follows then, that
-\begin{align} \label{eq:29}
+\begin{align} 
 \beta &= \sqrt{\frac{k}{gm}}. \\
       &= \sqrt{\frac{7.757 \cdot 10^{-6}[\si{\kilogram\per\meter}]}{9.81 [\si{\meter\per\second\squared}] \cdot 7 \cdot 10^{-5} [\si{\kilo\gram}]}} \\
-      &= 0.106 [\si{\meter\per\kilo\gram}].
+      &= 0.106 [\si{\per\meter\second}]. \label{eq:29}
 \end{align}
 Using terminal velocity $V$ and the calculated value for $\beta$, we calculate the maximum value $\beta v_y$ is able to take as follows 
 \begin{align} 
-\beta V &= 0.106 [\si{\meter\per\kilo\gram}] \cdot 9.1[\si{\meter\per\second}] \\
-        &= 0.9646 [\si{\meter\squared\per\second\per\kilo\gram}] .\label{eq:30}
+\beta V &= 0.106 [\si{\per\meter\second}] \cdot 9.1[\si{\meter\per\second}] \\
+        &= 0.9646 .\label{eq:30}
 \end{align}
 Because of (\ref{eq:30}), we know that $1 - \beta v_y \geq 0$ holds true over the complete range of $v_y(t)$. And thus we are able to
 get rid of the absolute value signs in (\ref{eq:27}), arriving at
@@ -316,7 +316,7 @@ Therefore, we set it to 0.
 2 g \beta t &=  \ln{\left(\frac{1 + \beta v_y}{1 - \beta v_y} \right)} \label{eq:32}
 \end{align}
 So far so good. But how are we supposed to solve [\ref{eq:32}] for $v_y$? Yet another ingenious math strategy is about to unfold.
-Let's recall the very basic concept of what an logarithm is:
+Let's recall the very basic concept of what a logarithm is:
 \begin{align} 
 3 &=  \log_{10}{(1000)} \label{eq:33}
 \end{align}
@@ -332,17 +332,64 @@ to get
 \end{align}
 Applying the same rearrangement operation to (\ref{eq:32}) yields
 \begin{align} 
-e^{2 g \beta t} &=  \frac{1 + \beta v_y}{1 - \beta v_y}. \label{eq:33}
+e^{2 g \beta t} &=  \frac{1 + \beta v_y}{1 - \beta v_y}. \label{eq:35}
 \end{align}
-We're almost there. Some more variable shuffling and we arrive at the final solution
+We're almost there. Some more variable shuffling 
 \begin{align} 
 e^{2 g \beta t} &=  \frac{1 + \beta v_y}{1 - \beta v_y} \\
 e^{2 g \beta t} \cdot \left(1 - \beta v_y \right) &= 1 + \beta v_y  \\
 e^{2 g \beta t} - e^{2 g \beta t}\beta v_y &= 1 + \beta v_y  \\
-e^{2 g \beta t} - 1 &= \beta v_y (1 + e^{2 g \beta t}) \\
-v_y(t) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t} - 1}{e^{2 g \beta t} + 1}.
+e^{2 g \beta t} - 1 &= \beta v_y (1 + e^{2 g \beta t})
 \end{align}
+and we arrive at the final solution
+\begin{align}
+v_y(t) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t} - 1}{e^{2 g \beta t} + 1}.\label{eq:36}
+\end{align}
+The graph below shows $v_y(t)$ plotted over the range $0[\si{\second}] \leq t \leq 10[\si{\second}]$.
 
 \includegraphics[width=.95\linewidth]{graph}
+
+It seems like $v_y(t)$ is converging to some value. This confirms our intuition about falling objects.
+The value $v_y(t)$ is converging to, of course, is the terminal Velocity.
+We already know the terminal Velocity $V$ from equation (\ref{eq:2.5}). But this $V$ isn't very mathematical. 
+We got it from a graph on a paper about the terminal velocities of raindrops.
+We needed it to get a sensible drag coefficient $C_d$, but in order to know the true 
+mathematically correct terminal velocity (let's call it $V_t$), we need to calculate the limit 
+of $v_y(t)$ as $t$ approaches infinity.
+\begin{align} 
+lim_{t\to\infty} v_y(t) &= V_t = lim_{t\to\infty} \frac{1}{\beta} \cdot \frac{e^{2 g \beta t} - 1}{e^{2 g \beta t} + 1} \label{eq:37}
+\end{align}
+Multiplying both the nominator and denominator of the right hand side of equation (\ref{eq:37}) by $e^{-2 g \beta t}$ we get
+\begin{align} 
+V_t &= lim_{t\to\infty} \frac{1}{\beta} \cdot \frac{1 - e^{-2 g \beta t}}{1 + e^{-2 g \beta t}}. \label{eq:38}
+\end{align}
+And since 
+\begin{align} 
+lim_{t\to\infty} e^{-2 g \beta t} &= 0
+\end{align}
+equation (\ref{eq:38}) becomes
+\begin{align} 
+V_t &=  \frac{1}{\beta} \cdot \frac{1 - 0}{1 + 0}. \label{eq:39} \\
+    &=  \frac{1}{\beta} . \label{eq:40}
+\end{align}
+This turns out to be quite a surprise. The $/beta$, which we created merely as a way to keep our equations from getting too cluttered,
+turns out to be the terminal Velocity $Vt$! We already calculated $\beta$ to be 0.106 [\si{\per\meter\second}] in equation (\ref{eq:29}).
+Using this result to calculate $V_t$ we get
+\begin{align} 
+V_t &=  \frac{1}{0.106 [\si{\per\meter\second}]} \\
+    &=  9.434 [\si{\meter\per\second}]
+\end{align}
+The units are right as well. Everything's falling into it's place. Remember how we had to show that $1 - \beta v_y \geq 0$ is true
+for the complete range of $v_y(t)$ to get rid of the absolute value signs in the equation below?
+\begin{align} 
+2g t + C_4 &=  \frac{1}{\beta} \ln{\left|\frac{1 + \beta v_y}{1 - \beta v_y} \right|}
+\end{align}
+We barely managed to do so in (\ref{eq:30}), but it wasn't very mathematical at all. We crudely used terminal velocity $V$ to vouch for us
+that $v_y(t)$ wouldn't get too big and we are indeed able to get rid of those absolute value signs.
+Armed with our new shiny $V_t = \beta^{-1}$ we can show that $1 - \beta v_y \geq 0$ holds true in a much more satisfying way:
+\begin{align} 
+  1 - \beta \cdot V_t &= 1 - \beta \cdot \beta^{-1} \\
+  &= 0 \geq 0
+\end{align}
 
 \end{document}

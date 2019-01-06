@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1546594947 "c:/git/Latex/RaindropWithAirResistance/RaindropWithAirResistance.tex" "RaindropWithAirResistance.pdf" "RaindropWithAirResistance" 1546594949
-  "RaindropWithAirResistance.aux" 1546594949 1505 7942c394c29bffb452e2c9b8762fd97a ""
-  "RaindropWithAirResistance.tex" 1546594946 17757 42cdd304a97135b364ef3d5f3afc14e0 ""
-  "c:/git/Latex/RaindropWithAirResistance/RaindropWithAirResistance.tex" 1546594946 17757 42cdd304a97135b364ef3d5f3afc14e0 ""
+["pdflatex"] 1546764621 "c:/git/Latex/RaindropWithAirResistance/RaindropWithAirResistance.tex" "RaindropWithAirResistance.pdf" "RaindropWithAirResistance" 1546764622
+  "RaindropWithAirResistance.aux" 1546764622 1645 1b60494dfd8c57c21bc50944defa8b28 ""
+  "RaindropWithAirResistance.tex" 1546764620 20339 de74fcb5dfa394087226024c87934821 ""
+  "c:/git/Latex/RaindropWithAirResistance/RaindropWithAirResistance.tex" 1546764620 20339 de74fcb5dfa394087226024c87934821 ""
   "graph.pdf" 1546594927 8616 154f2175894074664ac66a9f6040b5b9 ""
   "i:/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1541295043 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "i:/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1541295283 3332 103109f5612ad95229751940c61aada0 ""
@@ -141,6 +141,6 @@
   "i:/texlive/2018/texmf.cnf" 1541297758 673 4ae7b2f49cee444c5343a45b5d0f169c ""
   "nul" 0 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
-  "RaindropWithAirResistance.pdf"
   "RaindropWithAirResistance.aux"
+  "RaindropWithAirResistance.pdf"
   "RaindropWithAirResistance.log"
