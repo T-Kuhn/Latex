@@ -74,6 +74,9 @@
 
 \maketitle % Print the title
 
+\section{Important note}
+This is a work in progress. It is not finished at this moment in time.
+
 \section{What are we trying to do here?}
 We want to spend some time thinking about double pendulums and numerical simulations.
 Our goal is, of course, to create a working simulation of a double pendulum. 
@@ -89,6 +92,27 @@ That's better. The problem doesn't look all that daunting anymore.
 \section{defining the double pendulum}
 
 \section{constructing the differential equation}
+In order to get the simulation up and running, we need equations (14) and (19) from scienceworld's Double Pendulum page\footnote{http://scienceworld.wolfram.com/physics/DoublePendulum.html}.
+Here they are.
+
+\begin{align} \label{eq:1}
+(m_1 + m_2) l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2)
+ + m_2 l_2 \dot{\theta}^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 &= 0
+\end{align}
+
+\begin{align} \label{eq:1}
+  m_2 l_2 \ddot{\theta}_2 + m_2 l_1 \ddot{\theta}_1 cos(\theta_1 - \theta_2)
+  - m_2 l_1 \dot{\theta}^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0
+\end{align}
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
