@@ -96,19 +96,47 @@ In order to get the simulation up and running, we need equations (14) and (19) f
 Here they are.
 
 \begin{align} \label{eq:1}
-(m_1 + m_2) l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2)
- + m_2 l_2 \dot{\theta}^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 &= 0
+  (m_1 + m_2) l_1 \ddot{\theta}_1 + m_2 l_2 \ddot{\theta}_2 \cos(\theta_1 - \theta_2)
+  + m_2 l_2 \dot{\theta}^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 &= 0
 \end{align}
 
-\begin{align} \label{eq:1}
+\begin{align} \label{eq:2}
   m_2 l_2 \ddot{\theta}_2 + m_2 l_1 \ddot{\theta}_1 cos(\theta_1 - \theta_2)
   - m_2 l_1 \dot{\theta}^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0
 \end{align}
 
+Those two equations are both second order. In order to apply euler's method to them, we need to split each of them into first order differential equations.
+But how does one split them? We do this by introducting $\lambda_1$ and $\lambda_2$ which are defined as follows.
+
+\begin{align} 
+  \lambda_1 &= \dot{\theta}_1 \label{eq:3} \\
+  \dot{\lambda}_1 &= \ddot{\theta}_1 \label{eq:4}
+  \\
+  \lambda_2 &= \dot{\theta}_2 \label{eq:5} \\
+  \dot{\lambda}_2 &= \ddot{\theta}_2 \label{eq:6}
+\end{align}
 
 
+Putting these lambdas into (\ref{eq:1}) yields
 
+\begin{align} \label{eq:7}
+  (m_1 + m_2) l_1 \dot{\lambda}_1 + m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2)
+  + m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 &= 0.
+\end{align}
 
+And doing the same thing to (\ref{eq:2}) yields
+
+\begin{align} \label{eq:8}
+  m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2)
+  - m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0.
+\end{align}
+
+We are in the process of preparing our differential equations for euler's method and the next crucial step is to rewrite (\ref{eq:7}) and (\ref{eq:8})
+in such a way that both have a single $\dot{\lambda}$ on the left side of the equal sign. For (\ref{eq:7}) we get
+
+\begin{align} \label{eq:9}
+   \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1}.
+\end{align}
 
 
 
