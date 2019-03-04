@@ -111,12 +111,49 @@ Note also how we started with a differential equation equalling a derivative $\d
 if we started with a differential equation equalling the acceleration to a function of time and velocity, then Eulers Method would give us velocity, time pairs as a result.
 \vspace{\baselineskip}
 
-After spending some time thinking about Euler's Method, we think that we got some intuition about how to use it and what results
+After spending some time thinking about Euler's Method, we are now confident that we got some intuition about how to use it and what results
 to expect. But we still haven't used the damn thing. So let's give it a roll.
-\begin{align} \label{eq:10}
-\frac{d}{dt} v_y(t) &= g - \frac{k}{m} \cdot v_y(t)^2
+\begin{align} \label{eq:em4}
+\frac{d}{dt} v(t) &= g - \frac{k}{m} \cdot v(t)^2
 \end{align}
-Here's a first order differential equation. It's 
+Here's a first order differential equation. 
+And it's quite a special one, for it is a differential equation whose solution can be determined analytically. This is quite rare.
+The differential equation modeling the double pendulum isn't quite as tame - There are no mathematical tools which could lead us to an analytically derived solution. 
+But back to (\ref{eq:em4}). This equation models a falling object experiencing air resistance. The air resistance in this specific case is modeled to be proportional 
+to the velocity squared. There are also quite a few constants in the mix. Let's go through them one by one.
+
+$k$ is the air resistance coefficient and it's magnitude is
+\begin{align} \label{eq:em5}
+k &= 7.757 \cdot 10^{-6}[\si{\kilogram\per\meter}].
+\end{align}
+$g$ is the acceleration of gravity.
+\begin{align} \label{eq:em6}
+g &= 9.81 [\si{\meter\per\second\squared}]
+\end{align}
+and $m$ is the mass of the falling object.
+\begin{align} \label{eq:em7}
+m &= 70 [\si{\milli\gram}]
+\end{align}
+Furthermore we know that the solution to (\ref{eq:em4}) is
+\begin{align}
+v(t) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t} - 1}{e^{2 g \beta t} + 1}.\label{eq:em8}
+\end{align}
+Where $\beta$ is defined as
+\begin{align} 
+\beta &= \sqrt{\frac{k}{gm}}. \\
+      &= \sqrt{\frac{7.757 \cdot 10^{-6}[\si{\kilogram\per\meter}]}{9.81 [\si{\meter\per\second\squared}] \cdot 7 \cdot 10^{-5} [\si{\kilo\gram}]}} \\
+      &= 0.106 [\si{\per\meter\second}]. \label{eq:em9}
+\end{align}
+Knowing all this allows us to put Euler's Method to the test. How will our numerically computed value for, for instance, $t_p = 10 \si{\second}$ measure up to the exact value 
+computed by inserting $t_p = 10 \si{\second}$ into (\ref{eq:em8}). We might use $v_a(t)$ and $v_n(t)$ to differentiate between results gained from the analytical equation 
+as opposed to results computed by the numerical approach. 
+
+\begin{align}
+v_a(t_p = 10\si{\second}) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t_p} - 1}{e^{2 g \beta t_p} + 1}.\label{eq:em10} \\
+ &= 9.434 \si{\meter\per\second}.\label{eq:em11}
+\end{align}
+
+
 
 
 
