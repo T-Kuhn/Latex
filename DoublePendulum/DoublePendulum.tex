@@ -145,13 +145,30 @@ Where $\beta$ is defined as
       &= 0.106 [\si{\per\meter\second}]. \label{eq:em9}
 \end{align}
 Knowing all this allows us to put Euler's Method to the test. How will our numerically computed value for, for instance, $t_p = 10 \si{\second}$ measure up to the exact value 
-computed by inserting $t_p = 10 \si{\second}$ into (\ref{eq:em8}). We might use $v_a(t)$ and $v_n(t)$ to differentiate between results gained from the analytical equation 
+computed by inserting $t_p = 10 \si{\second}$ into (\ref{eq:em8})? We might use $v_a(t)$ and $v_n(t)$ to differentiate between results gained from the analytical equation 
 as opposed to results computed by the numerical approach. 
 
 \begin{align}
 v_a(t_p = 10\si{\second}) &= \frac{1}{\beta} \cdot \frac{e^{2 g \beta t_p} - 1}{e^{2 g \beta t_p} + 1}.\label{eq:em10} \\
  &= 9.434 \si{\meter\per\second}.\label{eq:em11}
 \end{align}
+
+Here we go. The exact value for our falling object after 10 seconds - assuming the initial velocity is 0 - 
+amounts to $v_a(t_p = 10\si{\second}) = 9.434 \si{\meter\per\second}$.
+
+Now we need to get our simulation going. From (\ref{eq:em1}) and (\ref{eq:em4}) we know that
+\begin{align} 
+  \dot{y} &= f(y, t)  \\
+   &= \frac{d}{dt} y(t)  \\
+   &= g - \frac{k}{m} \cdot y(t)^2 \label{eq:em12}
+\end{align}
+Inserting (\ref{eq:em12}) into (\ref{eq:em3}), we get
+\begin{align} \label{eq:em3}
+  t_1 &= t_0 + \epsilon \\
+  y_1 &= y_0 + \epsilon \left(g - \frac{k}{m} \cdot y_0^2\right).
+\end{align}
+And that's it. Now all we need to do is choose some small number for $\epsilon$ (we'll go with 0.1 for now), insert 0 for both $t_0$ and $y_0$, 
+and we're ready to run the simulation. Running it, we get $v_n(t_p = 10\si{\second}) = 9.408 \si{\meter\per\second}$ - which isn't that far off the exact value.
 
 
 
