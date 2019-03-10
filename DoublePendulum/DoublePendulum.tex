@@ -170,10 +170,6 @@ Inserting (\ref{eq:em12}) into (\ref{eq:em3}), we get
 And that's it. Now all we need to do is choose some small number for $\epsilon$ (we'll go with 0.1 for now), insert 0 for both $t_0$ and $y_0$, 
 and we're ready to run the simulation. Running it, we get $v_n(t_p = 10\si{\second}) = 9.408 \si{\meter\per\second}$ - which isn't that far off the exact value.
 
-
-
-
-
 \section{constructing the differential equation}
 In order to get the simulation up and running, we need equations (14) and (19) from scienceworld's Double Pendulum page\footnote{http://scienceworld.wolfram.com/physics/DoublePendulum.html}.
 Here they are.
@@ -185,8 +181,8 @@ Here they are.
   m_2 l_2 \ddot{\theta}_2 + m_2 l_1 \ddot{\theta}_1 cos(\theta_1 - \theta_2)
   - m_2 l_1 \dot{\theta}^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0
 \end{align}
-Those two equations are both second order. In preparation for using Euler's Method on them, we need to split each of them into first order differential equations.
-But how does one split them? We do this by introducting $\lambda_1$ and $\lambda_2$ which are defined as follows.
+Those two equations are both second order. In preparation for using Euler's Method on them, we need to split each of them into two first order differential equations.
+But how does one split them? We do this by introducting $\lambda_1$ and $\lambda_2$ which we define as follows.
 \begin{align} 
   \lambda_1 &= \dot{\theta}_1 \label{eq:3} \\
   \dot{\lambda}_1 &= \ddot{\theta}_1 \label{eq:4}
@@ -209,5 +205,79 @@ in such a way that both have a single $\dot{\lambda}$ on the left side of the eq
 \begin{align} \label{eq:9}
    \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1}.
 \end{align}
+And now we intended to do the same for (\ref{eq:8}), but after pondering for a while over (\ref{eq:9}) it dawns on us that something isn't quite right.
+We planned to use Euler's Method on
+\begin{align} 
+  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
+\end{align}
+to obtain $\lambda_1$, and then one more time on
+\begin{align} 
+  \dot{\theta}_1 &= \lambda_1 \label{eq:10} 
+\end{align}
+to obtain $\theta_1$ and then applying Euler's Method in a similar way to also get $\lambda_2$ and $\theta_2$. Here's the problem: There's a $\dot{\lambda}_2$ in equation (\ref{eq:9}) and there's no specific value we can plug in 
+for it.
+
+\vspace{\baselineskip}
+Here's what needs to be done: We need to solve (\ref{eq:8}) for $\dot{\lambda}_2$, put the result into (\ref{eq:7}) and then solve for $\dot{\lambda}_1$. That should get us back on track.
+Solving (\ref{eq:8}) for $\dot{\lambda}_2$, we get
+\begin{align} \label{eq:11}
+  \dot{\lambda}_2 &= \frac{m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2) - m_2 g \sin \theta_2}{m_2 l_2}.
+\end{align}
+Now we insert (\ref{eq:11}) into (\ref{eq:7})
+\begin{align} 
+  &(m_1 + m_2) l_1 \dot{\lambda}_1 + m_2 l_2 \frac{m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2) - m_2 g \sin \theta_2}{m_2 l_2}\cos(\theta_1 - \theta_2)  \notag \\
+  &+ m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:12}
+\end{align}
+clean up a little
+\begin{align} 
+  &(m_1 + m_2) l_1 \dot{\lambda}_1 + \left( m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2) - m_2 g \sin \theta_2 \right) \cos(\theta_1 - \theta_2)  \notag \\
+  &+ m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:13}
+\end{align}
+multiply out all the terms
+\begin{align} 
+  &(m_1 + m_2) l_1 \dot{\lambda}_1 + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2)    \notag \\
+  & - m_2 g \sin \theta_2\cos(\theta_1 - \theta_2) + m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:14}
+\end{align}
+rearrange the terms in such a way that there is only one $\dot{\lambda}_1$
+\begin{align} 
+  &\dot{\lambda}_1 \{(m_1 + m_2) l_1 - m_2 l_1 cos^2(\theta_1 - \theta_2)\} + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2)   \notag \\
+  & - m_2 g \sin \theta_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:15}
+\end{align}
+and finally solve for $\dot{\lambda}_1$ by isolating it on the left side.
+\begin{align} 
+  &\dot{\lambda}_1 \{(m_1 + m_2) l_1 - m_2 l_1 cos^2(\theta_1 - \theta_2)\} \notag \\
+  &= m_2 g \sin \theta_2 \cos(\theta_1 - \theta_2) - m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2) \notag \\
+  &- m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1. \label{eq:16}
+\end{align}
+\begin{align} 
+  \dot{\lambda}_1 &= \\ \label{eq:17}
+  &\frac{m_2 g \sin \theta_2 \cos(\theta_1 - \theta_2) - m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1 - m_2 l_1 cos^2(\theta_1 - \theta_2)}  
+\end{align}
+The equation fits barely on the screen. But now we finally got what we need to get our double pendulum swinging. Or at least the first half of it. We still need to 
+solve (\ref{eq:7}) for $\dot{\lambda}_1$, put the result into (\ref{eq:8}) and then solve for $\dot{\lambda}_2$. So let's get it over with.
+\vspace{\baselineskip}
+
+Luckily, we already solved (\ref{eq:7}) for $\dot{\lambda}_1$ in our first failed attempt of getting all the equations ready. Here it is again:
+\begin{align} 
+  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
+\end{align}
+(\ref{eq:9}) needs to be inserted into (\ref{eq:8}). Some quick copy and paste action saves us from scrolling all the way up to look at (\ref{eq:8}).
+\begin{align} 
+  m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2)
+  - m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0. \tag{\ref{eq:8}}
+\end{align}
+inserting (\ref{eq:9}) into (\ref{eq:8}) we get
+\begin{align} 
+  &m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} cos(\theta_1 - \theta_2) \\ \notag
+  &- m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 = 0. \label{eq:18}
+\end{align}
+
+
+
+
+
+
+
+
 
 \end{document}
