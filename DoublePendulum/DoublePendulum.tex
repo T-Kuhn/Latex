@@ -203,12 +203,12 @@ And doing the same thing to (\ref{eq:2}) yields
 We are in the process of preparing our differential equations for Euler's Method and the next crucial step is to rewrite (\ref{eq:7}) and (\ref{eq:8})
 in such a way that both have a single $\dot{\lambda}$ on the left side of the equal sign. For (\ref{eq:7}) we get
 \begin{align} \label{eq:9}
-   \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1}.
+   \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1}.
 \end{align}
 And now we intended to do the same for (\ref{eq:8}), but after pondering for a while over (\ref{eq:9}) it dawns on us that something isn't quite right.
 We planned to use Euler's Method on
 \begin{align} 
-  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
+  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
 \end{align}
 to obtain $\lambda_1$, and then one more time on
 \begin{align} 
@@ -235,12 +235,12 @@ clean up a little
 \end{align}
 multiply out all the terms
 \begin{align} 
-  &(m_1 + m_2) l_1 \dot{\lambda}_1 + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2)    \notag \\
+  &(m_1 + m_2) l_1 \dot{\lambda}_1 + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2) - m_2 l_1 \dot{\lambda}_1 cos^2(\theta_1 - \theta_2)    \notag \\
   & - m_2 g \sin \theta_2\cos(\theta_1 - \theta_2) + m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:14}
 \end{align}
 rearrange the terms in such a way that there is only one $\dot{\lambda}_1$
 \begin{align} 
-  &\dot{\lambda}_1 \{(m_1 + m_2) l_1 - m_2 l_1 cos^2(\theta_1 - \theta_2)\} + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2)   \notag \\
+  &\dot{\lambda}_1 \left((m_1 + m_2) l_1 - m_2 l_1 cos^2(\theta_1 - \theta_2)\right) + m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2)\cos(\theta_1 - \theta_2)   \notag \\
   & - m_2 g \sin \theta_2 \cos(\theta_1 - \theta_2) + m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) + g (m_1 + m_2) \sin \theta_1 = 0. \label{eq:15}
 \end{align}
 and finally solve for $\dot{\lambda}_1$ by isolating it on the left side.
@@ -259,20 +259,33 @@ solve (\ref{eq:7}) for $\dot{\lambda}_1$, put the result into (\ref{eq:8}) and t
 
 Luckily, we already solved (\ref{eq:7}) for $\dot{\lambda}_1$ in our first failed attempt of getting all the equations ready. Here it is again:
 \begin{align} 
-  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
+  \dot{\lambda}_1 &= \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} \tag{\ref{eq:9}}
 \end{align}
-(\ref{eq:9}) needs to be inserted into (\ref{eq:8}). Some quick copy and paste action saves us from scrolling all the way up to look at (\ref{eq:8}).
+(\ref{eq:9}) needs to be inserted into (\ref{eq:8}). Here's (\ref{eq:8}) again:
 \begin{align} 
   m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \dot{\lambda}_1 cos(\theta_1 - \theta_2)
   - m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 &= 0. \tag{\ref{eq:8}}
 \end{align}
-inserting (\ref{eq:9}) into (\ref{eq:8}) we get
+Inserting (\ref{eq:9}) into (\ref{eq:8}) we get
 \begin{align} 
-  &m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} cos(\theta_1 - \theta_2) \\ \notag
+  &m_2 l_2 \dot{\lambda}_2 + m_2 l_1 \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{(m_1 + m_2) l_1} cos(\theta_1 - \theta_2) \\ \notag
   &- m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 = 0. \label{eq:18}
 \end{align}
-
-
+We simplify the thing by canceling the two $m_2 l_1$ terms in the nominator and denominator. Doing so we get
+\begin{align} 
+  &m_2 l_2 \dot{\lambda}_2 + \frac{- m_2 l_2 \dot{\lambda}_2 \cos(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2) - g (m_1 + m_2) \sin \theta_1}{m_1l_1} cos(\theta_1 - \theta_2) \\ \notag
+  &- m_2 l_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_2 g \sin \theta_2 = 0. \label{eq:19}
+\end{align}
+Now we multiply both sides of the equation by $m_1 l_1$ to get rid of the fraction. This operation yields
+\begin{align} 
+  &m_1 m_2 l_1 l_2 \dot{\lambda}_2 - m_2 l_2 \dot{\lambda}_2 \cos^2(\theta_1 - \theta_2) - m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2)cos(\theta_1 - \theta_2) - g (m_1 + m_2) \sin (\theta_1) cos(\theta_1 - \theta_2)  \\ \notag
+  &- m_1 m_2 l^2_1 \lambda^2_1 sin(\theta_1 - \theta_2) + m_1 m_2 l_1 g \sin \theta_2 = 0. \label{eq:20}
+\end{align}
+isolating $\dot{\lambda}_2$ on the left side we get
+\begin{align} 
+  \dot{\lambda}_2  &= \\ \label{eq:21} 
+   & \frac{m_2 l_2 \lambda^2_2 \sin(\theta_1 - \theta_2)cos(\theta_1 - \theta_2) + g (m_1 + m_2) \sin (\theta_1) cos(\theta_1 - \theta_2) + m_1 m_2 l^2_1 \lambda^2_1 sin(\theta_1 - \theta_2) - m_1 m_2 l_1 g \sin \theta_2}{m_1 m_2 l_1 l_2  - m_2 l_2 \cos^2(\theta_1 - \theta_2)}. \notag
+\end{align}
 
 
 
